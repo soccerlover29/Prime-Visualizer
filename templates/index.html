@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime Number Range Visualizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 Prime Number Visualizer 🎉</h1>
+        {% with messages = get_flashed_messages() %}
+          {% if messages %}
+            <ul class="flashes">
+              {% for message in messages %}
+                <li>{{ message }}</li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        {% endwith %}
+        <form method="post" class="form">
+            <label for="range">Enter a range (e.g., 5-10):</label>
+            <input type="text" id="range" name="range" placeholder="5-10" required>
+            <button type="submit">Visualize Range</button>
+        </form>
+        <form method="post" class="form">
+            <label for="single">Or enter a single number:</label>
+            <input type="text" id="single" name="single" placeholder="7" required>
+            <button type="submit">Visualize Single</button>
+        </form>
+    </div>
+</body>
+</html>
