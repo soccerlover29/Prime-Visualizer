@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Visualization Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Visualization Result</h1>
+    <!-- Center everything in one container -->
+    <div class="container">
+        <img src="data:image/png;base64,{{ image }}" alt="Visualization">
+        <br>
+        <a class="back-link" href="{{ url_for('index') }}">Go Back</a>
+    </div>
+</body>
+</html>
